@@ -3,6 +3,7 @@ import 'package:islami_app/layout/home_layout.dart';
 import 'package:islami_app/moduls/splash_screen/splash_screen.dart';
 
 import 'core/theme/application_theme.dart';
+import 'moduls/hadeth_screen/hadeth_details_view.dart';
 import 'moduls/quran_screen/quran_details_view.dart';
 
 void main() {
@@ -18,7 +19,8 @@ class Islami extends StatelessWidget {
       routes: {
         SplashScreen.routeName: (context) => const SplashScreen(),
         HomeLayout.routeName: (context) => const HomeLayout(),
-        QuranDetailsView.routeName: (context) => QuranDetailsView(),
+        QuranDetailsView.routeName: (context) => const QuranDetailsView(),
+        HadethDetailsView.routeName: (context) => const HadethDetailsView(),
       },
       initialRoute: SplashScreen.routeName,
       debugShowCheckedModeBanner: false,
