@@ -6,7 +6,7 @@ class ApplicationTheme {
     primaryColor: const Color(0xFFB7935F),
     scaffoldBackgroundColor: Colors.transparent,
     appBarTheme: AppBarTheme(
-      iconTheme: IconThemeData(
+      iconTheme: const IconThemeData(
         color: Colors.black,
       ),
       elevation: 0,
