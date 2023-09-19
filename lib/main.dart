@@ -18,7 +18,7 @@ class Islami extends StatelessWidget {
       routes: {
         SplashScreen.routeName: (context) => const SplashScreen(),
         HomeLayout.routeName: (context) => const HomeLayout(),
-        QuranDetailsView.routeName: (context) => const QuranDetailsView(),
+        QuranDetailsView.routeName: (context) => QuranDetailsView(),
       },
       initialRoute: SplashScreen.routeName,
       debugShowCheckedModeBanner: false,
