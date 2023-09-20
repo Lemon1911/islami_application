@@ -62,7 +62,7 @@ class _HomeLayoutState extends State<HomeLayout> {
               label: "Hadeth",
               icon: ImageIcon(
                 AssetImage(
-                  "assets/image/sebha_icon.png",
+                  "assets/image/quran-logo.png",
                 ),
               ),
             ),
@@ -70,7 +70,7 @@ class _HomeLayoutState extends State<HomeLayout> {
               label: "Tasbeh",
               icon: ImageIcon(
                 AssetImage(
-                  "assets/image/quran-logo.png",
+                  "assets/image/sebha_icon.png",
                 ),
               ),
             ),
