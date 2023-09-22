@@ -4,6 +4,8 @@ import 'package:islami_app/moduls/quran_screen/quran_view.dart';
 import 'package:islami_app/moduls/radio_screen/radio_view.dart';
 import 'package:islami_app/moduls/tasbeh_screen/tasbeh_view.dart';
 
+import '../moduls/setting_screen/setting_view.dart';
+
 class HomeLayout extends StatefulWidget {
   const HomeLayout({super.key});
 
@@ -19,7 +21,8 @@ class _HomeLayoutState extends State<HomeLayout> {
     QuranView(),
     HadethView(),
     TasbehView(),
-    RadioView()
+    RadioView(),
+    SettingsView()
   ];
 
   @override
@@ -82,6 +85,12 @@ class _HomeLayoutState extends State<HomeLayout> {
                 ),
               ),
             ),
+            BottomNavigationBarItem(
+                label: "Setting",
+                icon: Icon(
+                  Icons.settings_outlined,
+                  size: 26,
+                )),
           ],
         ),
       ),
