@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 class ItemWidgetSetting extends StatelessWidget {
   const ItemWidgetSetting({
-    super.key,
+    Key? key,
     required this.title,
-    required this.tap,
-    required this.titleList,
-  });
+    required this.titleType,
+    required this.toDo,
+  }) : super(key: key);
 
   final String title;
-  final String titleList;
-  final Function tap;
+  final String titleType;
+  final Function toDo;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class ItemWidgetSetting extends StatelessWidget {
         ),
         InkWell(
           onTap: () {
-            tap();
+            toDo();
           },
           child: Container(
             alignment: AlignmentDirectional.center,
@@ -35,7 +35,7 @@ class ItemWidgetSetting extends StatelessWidget {
             ),
             width: mediaQuery.width,
             height: 50,
-            child: Text(titleList),
+            child: Text(titleType),
           ),
         ),
       ],
