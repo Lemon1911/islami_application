@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/layout/home_layout.dart';
 import 'package:islami_app/moduls/splash_screen/splash_screen.dart';
 
@@ -26,6 +27,10 @@ class Islami extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ApplicationTheme.lightTheme,
       darkTheme: ApplicationTheme.darkTheme,
+      themeMode: ThemeMode.light,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: Locale("en"),
     );
   }
 }
