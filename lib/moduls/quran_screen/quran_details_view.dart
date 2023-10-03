@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_app/core/theme/application_theme.dart';
 import 'package:islami_app/moduls/quran_screen/quran_view.dart';
 
 class QuranDetailsView extends StatefulWidget {
@@ -22,10 +23,12 @@ class _QuranDetailsViewState extends State<QuranDetailsView> {
     var arg = ModalRoute.of(context)?.settings.arguments as SuraDetails;
     if (content.isEmpty) readFile(arg.suraNumber);
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage("assets/image/background.png"),
+          image: AssetImage(ApplicationTheme.isDark
+              ? "assets/image/background_Dark.png"
+              : "assets/image/background.png"),
         ),
       ),
       child: Scaffold(
@@ -51,7 +54,7 @@ class _QuranDetailsViewState extends State<QuranDetailsView> {
             horizontal: 15,
           ),
           decoration: BoxDecoration(
-            color: const Color(0xffF8F8F8).withOpacity(0.8),
+            color: theme.colorScheme.onPrimary.withOpacity(0.8),
             borderRadius: BorderRadius.circular(
               25,
             ),
@@ -67,15 +70,14 @@ class _QuranDetailsViewState extends State<QuranDetailsView> {
                 const SizedBox(
                   width: 30,
                 ),
-                const Icon(
+                Icon(
                   Icons.play_circle_filled_rounded,
-                  color: Colors.black,
+                  color: theme.colorScheme.onSecondary,
                   size: 32,
                 ),
               ],
             ),
-            Divider(
-              color: theme.primaryColor,
+            const Divider(
               thickness: 2,
               endIndent: 30,
               indent: 30,
@@ -83,11 +85,11 @@ class _QuranDetailsViewState extends State<QuranDetailsView> {
             Expanded(
               child: ListView.builder(
                 itemBuilder: (context, index) => Text(
-                  content,
+                  "(${index + 1})  ${allVerses[index]} ",
                   style: theme.textTheme.bodySmall,
                   textAlign: TextAlign.center,
                 ),
-                itemCount: 1,
+                itemCount: allVerses.length,
               ),
             )
           ]),

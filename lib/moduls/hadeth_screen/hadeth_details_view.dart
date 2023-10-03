@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/core/theme/application_theme.dart';
 
 import 'hadeth_view.dart';
 
@@ -21,10 +22,12 @@ class _QuranDetailsViewState extends State<HadethDetailsView> {
     var theme = Theme.of(context);
     var arg = ModalRoute.of(context)?.settings.arguments as HadethContent;
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage("assets/image/background.png"),
+          image: AssetImage(ApplicationTheme.isDark
+              ? "assets/image/background_Dark.png"
+              : "assets/image/background.png"),
         ),
       ),
       child: Scaffold(
@@ -50,7 +53,7 @@ class _QuranDetailsViewState extends State<HadethDetailsView> {
             horizontal: 15,
           ),
           decoration: BoxDecoration(
-            color: const Color(0xffF8F8F8).withOpacity(0.8),
+            color: theme.colorScheme.onPrimary.withOpacity(0.8),
             borderRadius: BorderRadius.circular(
               25,
             ),
@@ -61,10 +64,10 @@ class _QuranDetailsViewState extends State<HadethDetailsView> {
               style: theme.textTheme.bodyMedium,
             ),
             Divider(
-              color: theme.primaryColor,
+              color: theme.colorScheme.onSecondary,
               thickness: 2,
               endIndent: 30,
-              indent: 30,
+              indent: 50,
             ),
             Expanded(
               child: ListView.builder(

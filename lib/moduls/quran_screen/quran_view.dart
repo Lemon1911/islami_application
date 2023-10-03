@@ -130,7 +130,7 @@ class QuranView extends StatelessWidget {
           "assets/image/quran_image.png",
         ),
         Divider(
-          color: theme.primaryColor,
+          color: theme.colorScheme.onSecondary,
           thickness: 3,
         ),
         Row(
@@ -145,7 +145,7 @@ class QuranView extends StatelessWidget {
             Container(
               width: 3,
               height: 50,
-              color: theme.primaryColor,
+              color: theme.colorScheme.onSecondary,
             ),
             Expanded(
               child: Text(
@@ -157,7 +157,7 @@ class QuranView extends StatelessWidget {
           ],
         ),
         Divider(
-          color: theme.primaryColor,
+          color: theme.colorScheme.onSecondary,
           thickness: 3,
         ),
         Expanded(
