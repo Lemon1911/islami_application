@@ -21,7 +21,7 @@ class SuraItem extends StatelessWidget {
         Container(
           width: 3,
           height: 50,
-          color: theme.primaryColor,
+          color: theme.colorScheme.onSecondary,
         ),
         Expanded(
           child: Text(

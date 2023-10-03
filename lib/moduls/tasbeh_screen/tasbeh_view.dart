@@ -76,7 +76,7 @@ class _TasbehViewState extends State<TasbehView>
           ),
           Text(
             "عدد التسبيحات",
-            style: theme.textTheme.bodyMedium,
+            style: theme.textTheme.titleLarge,
           ),
           const SizedBox(
             height: 15,
@@ -87,11 +87,11 @@ class _TasbehViewState extends State<TasbehView>
             height: 50,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: const Color(0xffC8B396),
+              color: theme.colorScheme.onPrimary.withOpacity(0.9),
             ),
             child: Text(
               "$counter",
-              style: theme.textTheme.bodyMedium,
+              style: theme.textTheme.titleLarge,
             ),
           ),
           const SizedBox(

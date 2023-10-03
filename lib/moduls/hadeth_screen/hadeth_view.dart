@@ -21,12 +21,15 @@ class _HadethViewState extends State<HadethView> {
         Image.asset(
           "assets/image/ahadeth_image.png",
         ),
-        Divider(color: theme.primaryColor),
+        Divider(
+          color: theme.colorScheme.onSecondary,
+          thickness: 2,
+        ),
         Text(
           "الاحاديث",
           style: theme.textTheme.bodyMedium,
         ),
-        Divider(color: theme.primaryColor),
+        Divider(color: theme.colorScheme.onSecondary, thickness: 2),
         Expanded(
           child: ListView.separated(
             itemBuilder: (context, index) => InkWell(
@@ -42,8 +45,10 @@ class _HadethViewState extends State<HadethView> {
                 textAlign: TextAlign.center,
               ),
             ),
-            separatorBuilder: (context, index) =>
-                Divider(color: theme.primaryColor, indent: 50, endIndent: 50),
+            separatorBuilder: (context, index) => Divider(
+                color: theme.colorScheme.onSecondary,
+                indent: 50,
+                endIndent: 50),
             itemCount: allHadethContent.length,
           ),
         )

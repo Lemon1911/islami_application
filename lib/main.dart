@@ -27,7 +27,7 @@ class Islami extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ApplicationTheme.lightTheme,
       darkTheme: ApplicationTheme.darkTheme,
-      themeMode: ThemeMode.light,
+      themeMode: ApplicationTheme.isDark ? ThemeMode.dark : ThemeMode.light,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       locale: Locale("en"),
