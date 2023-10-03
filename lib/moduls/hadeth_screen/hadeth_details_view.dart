@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/core/theme/application_theme.dart';
+import 'package:provider/provider.dart';
 
+import '../../core/provider/app_provider.dart';
 import 'hadeth_view.dart';
 
 class HadethDetailsView extends StatefulWidget {
@@ -18,6 +19,7 @@ class _QuranDetailsViewState extends State<HadethDetailsView> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppProvider>(context);
     var mediaQuery = MediaQuery.of(context).size;
     var theme = Theme.of(context);
     var arg = ModalRoute.of(context)?.settings.arguments as HadethContent;
@@ -25,9 +27,7 @@ class _QuranDetailsViewState extends State<HadethDetailsView> {
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage(ApplicationTheme.isDark
-              ? "assets/image/background_Dark.png"
-              : "assets/image/background.png"),
+          image: AssetImage(provider.backgroundImage()),
         ),
       ),
       child: Scaffold(
