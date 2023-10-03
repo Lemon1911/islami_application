@@ -4,6 +4,10 @@
 "hadeth":"احاديث",
 "tasbeh":"تسبيح",
 "radio":"راديو",
-"settings":"الاعدادات"
+"settings":"الاعدادات",
+"theme":"النمط",
+"language":"اللغة",
+"dark":"ليلى",
+"light": "نهارى"
 
 }

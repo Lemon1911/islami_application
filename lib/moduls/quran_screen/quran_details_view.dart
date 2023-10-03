@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami_app/core/theme/application_theme.dart';
+import 'package:islami_app/core/provider/app_provider.dart';
 import 'package:islami_app/moduls/quran_screen/quran_view.dart';
+import 'package:provider/provider.dart';
 
 class QuranDetailsView extends StatefulWidget {
   static const routeName = "QuranDetailsView";
@@ -18,6 +19,7 @@ class _QuranDetailsViewState extends State<QuranDetailsView> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppProvider>(context);
     var mediaQuery = MediaQuery.of(context).size;
     var theme = Theme.of(context);
     var arg = ModalRoute.of(context)?.settings.arguments as SuraDetails;
@@ -26,9 +28,9 @@ class _QuranDetailsViewState extends State<QuranDetailsView> {
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage(ApplicationTheme.isDark
-              ? "assets/image/background_Dark.png"
-              : "assets/image/background.png"),
+          image: AssetImage(
+            provider.backgroundImage(),
+          ),
         ),
       ),
       child: Scaffold(
