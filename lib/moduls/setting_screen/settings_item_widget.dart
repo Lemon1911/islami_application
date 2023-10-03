@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+typedef SettingOptionClicked = void Function();
+
 class ItemWidgetSetting extends StatelessWidget {
   const ItemWidgetSetting({
     Key? key,
@@ -10,7 +12,7 @@ class ItemWidgetSetting extends StatelessWidget {
 
   final String title;
   final String titleType;
-  final Function toDo;
+  final SettingOptionClicked toDo;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +34,10 @@ class ItemWidgetSetting extends StatelessWidget {
             decoration: BoxDecoration(
               color: theme.primaryColor.withOpacity(0.3),
               borderRadius: BorderRadius.circular(12),
+              border: Border.all(
+                color: theme.colorScheme.onSecondary,
+                width: 1.2,
+              ),
             ),
             width: mediaQuery.width,
             height: 50,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_app/core/theme/application_theme.dart';
 import 'package:islami_app/moduls/hadeth_screen/hadeth_view.dart';
 import 'package:islami_app/moduls/quran_screen/quran_view.dart';
 import 'package:islami_app/moduls/radio_screen/radio_view.dart';
@@ -30,10 +31,12 @@ class _HomeLayoutState extends State<HomeLayout> {
   Widget build(BuildContext context) {
     var appLocal = AppLocalizations.of(context)!;
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage("assets/image/background.png"),
+          image: AssetImage(ApplicationTheme.isDark
+              ? "assets/image/background_Dark.png"
+              : "assets/image/background.png"),
         ),
       ),
       child: Scaffold(

@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:islami_app/layout/home_layout.dart';
 
+import '../../core/theme/application_theme.dart';
+
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
@@ -19,8 +21,10 @@ class SplashScreen extends StatelessWidget {
     );
     return Scaffold(
       body: Image(
-        image: const AssetImage(
-          "assets/image/Splash_Screen.png",
+        image: AssetImage(
+          ApplicationTheme.isDark
+              ? "assets/image/Splash_Screen_Dark.png"
+              : "assets/image/Splash_Screen.png",
         ),
         width: mediaQuery.width,
         height: mediaQuery.height,
