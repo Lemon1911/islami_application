@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islami_app/core/theme/application_theme.dart';
+import 'package:islami_app/core/provider/app_provider.dart';
 import 'package:islami_app/moduls/hadeth_screen/hadeth_view.dart';
 import 'package:islami_app/moduls/quran_screen/quran_view.dart';
 import 'package:islami_app/moduls/radio_screen/radio_view.dart';
 import 'package:islami_app/moduls/tasbeh_screen/tasbeh_view.dart';
+import 'package:provider/provider.dart';
 
 import '../moduls/setting_screen/setting_view.dart';
 
@@ -29,14 +30,15 @@ class _HomeLayoutState extends State<HomeLayout> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppProvider>(context);
     var appLocal = AppLocalizations.of(context)!;
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage(ApplicationTheme.isDark
-              ? "assets/image/background_Dark.png"
-              : "assets/image/background.png"),
+          image: AssetImage(
+            provider.backgroundImage(),
+          ),
         ),
       ),
       child: Scaffold(

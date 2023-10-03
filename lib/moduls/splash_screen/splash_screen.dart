@@ -1,9 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:islami_app/core/theme/application_theme.dart';
 import 'package:islami_app/layout/home_layout.dart';
-
-import '../../core/theme/application_theme.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
